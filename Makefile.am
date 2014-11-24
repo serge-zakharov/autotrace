@@ -22,7 +22,6 @@ EXTRA_DIST = \
   libming.sln \
   libming.vcproj \
   autotrace.pc.in \
-  autotrace.spec.in \
   TODO \
   HACKING \
   FAQ \
@@ -215,12 +214,6 @@ autotrace_LDADD = \
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA= autotrace.pc
-
-dist-hook: autotrace.spec
-	cp autotrace.spec $(distdir)
-
-rpm: dist autotrace.spec
-	rpm -bb autotrace.spec
 
 # ACLOCAL_AMFLAGS = -I m4
 

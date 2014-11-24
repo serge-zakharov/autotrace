@@ -176,7 +176,7 @@ fi
 
 AC_OUTPUT([
 po/Makefile.in 
-Makefile autotrace.pc autotrace.spec])
+Makefile autotrace.pc])
 
 echo "
 
