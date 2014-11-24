@@ -1,6 +1,6 @@
 NULL = 
 SUBDIRS = po
-man_MANS = autotrace.1
+man_MANS = doc/autotrace.1
 EXTRA_DIST = \
   $(man_MANS) \
   src/output-swf.c \
@@ -24,7 +24,7 @@ EXTRA_DIST = \
   autotrace.pc.in \
   TODO \
   HACKING \
-  FAQ \
+  doc/FAQ \
   $(NULL)
 
 AUTOMAKE_OPTIONS = foreign no-dependencies
