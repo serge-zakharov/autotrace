@@ -215,6 +215,6 @@ autotrace_LDADD = \
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA= autotrace.pc
 
-# ACLOCAL_AMFLAGS = -I m4
+ACLOCAL_AMFLAGS = -I m4
 
 -include $(top_srcdir)/git.mk
