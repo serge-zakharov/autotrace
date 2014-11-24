@@ -41,104 +41,11 @@ AC_ARG_WITH(magick,
 [  --with-magick  compile with maigck(default)
   --without-magick  compile without maigck],,with_magick=yes)
 
-if test $with_magick = yes ; then
-	AC_CHECK_PROG(MAGICK_CONFIG, Magick-config, Magick-config, "")
-	if test "x$MAGICK_CONFIG" = "xMagick-config" ; then
-		CPPFLAGS_BACKUP="$CPPFLAGS"
-		CPPFLAGS=`Magick-config --cppflags`
-		AC_CHECK_HEADER(magick/api.h,
-				magick_header_found=yes,
-				magick_header_found=no)
-		MAGICK_CFLAGS=${CPPFLAGS}
-		CPPFLAGS=${CPPFLAGS_BACKUP}
-		if test "x${magick_header_found}" = xyes ; then
-			MAGICK_LDFLAGS="`Magick-config --ldflags` `Magick-config --libs`"
-			dnl
-			dnl Checking version
-			dnl
-			AC_MSG_CHECKING([ImageMagick - version >= 5.2.1])
-			dnl Get version and split it into MAJOR, MINOR and MICRO
-			MAGICK_VERSION=`Magick-config --version`
-                        dnl The following test works because there was never
-                        dnl any imagemagick 5.x.y with x >= 10.
-                        case $MAGICK_VERSION in
-                          [[01234]] | [[01234]].* | 5.[[01]]* | 5.2.0* )
-
-			   	AC_MSG_RESULT(no($MAGICK_VERSION))
-				AC_MSG_WARN([*** Version 5.2.1 or higher is required.             ***])
-				AC_MSG_WARN([*** ImageMagick input handler is disabled.           ***])
-				;;
-			   *)
-				AC_MSG_RESULT(yes($MAGICK_VERSION))
-				AC_SUBST(MAGICK_CFLAGS)
-				AC_SUBST(MAGICK_LDFLAGS)
-				HAVE_MAGICK=yes
-				AC_DEFINE(HAVE_MAGICK,1,[ImageMagick library is available or not])
-			        ;;
-			esac
-		else
-			AC_MSG_WARN([*** Magick-config is found but magick/api.h is not found in $MAGICK_CFLAGS ***])
- 			AC_MSG_WARN([*** Check Magick-config.                                                   ***])
-			AC_MSG_WARN([*** ImageMagick input handler is disabled.                                 ***])
-		fi
-	else
-		AC_MSG_WARN([*** Magick-config is not found.                      ***])
-		AC_MSG_WARN([*** ImageMagick input handler is disabled.           ***])		
-	fi
+magick_ok=no
+if test "x${with_magick}" = xyes; then
+  PKG_CHECK_MODULES(MAGICK, MagickCore, magick_ok=yes, :)
 fi
-AM_CONDITIONAL(HAVE_MAGICK, test $HAVE_MAGICK = yes)
-
-dnl
-dnl libMagick.la sanity check
-dnl 
-dnl It seems that libMagick.la in RedHat 7.2 is broken.
-dnl libMagick.la refers /usr/lib/libxml2.la. However, 
-dnl /usr/lib/libxml2.la is not existed. Therefore linking
-dnl against libMagick.la is failed.
-dnl
-libMagick_la_path=
-libMagick_la_sanity=yes
-
-dnl Stage one: finding libMagick.la
-if test $HAVE_MAGICK = yes && test $enable_shared = yes; then
-   for f in $MAGICK_LDFLAGS; do
-      case ${f} in
-	   -L*)
-	       f=`echo $f | sed -e 's/-L//'`
-	       if test -f ${f}/libMagick.la; then
-		  libMagick_la_path="${f}/libMagick.la"
-	       fi;;
-      esac
-   done
-fi
-
-dnl Stage two: Check internal of libMagick.la
-if test -n "${libMagick_la_path}"; then
-   AC_MSG_CHECKING([Sanity of libMagick.la])
-   dnl libdir is defined in libMagick.al.
-   dnl Don't use the value.
-   libdir_backup=${libdir}
-    . ${libMagick_la_path}
-   libdir=${libdir_backup}
-    for elt in ${dependency_libs}; do
-	case ${elt} in
-	    *.la )
-		if test ! -f ${elt}; then
-		   if test ${libMagick_la_sanity} = yes; then
-		      AC_MSG_RESULT([broken])
-		      libMagick_la_sanity=no
-		   fi
-		   AC_MSG_WARN([Cannot find $elt refereed in ${libMagick_la_path}])
-		fi;;
-	esac
-    done
-   if test ${libMagick_la_sanity} = yes; then
-      AC_MSG_RESULT([ok])
-   else
-      AC_MSG_WARN([*** Building will be failed at link time.])
-      AC_MSG_WARN([*** To avoid this failure, don't link libMagick.so: Run ./configure --without-magick])
-   fi
-fi
+AM_CONDITIONAL(HAVE_MAGICK, test x$magick_ok == xyes)
 
 dnl
 dnl LIBPNG
@@ -272,7 +179,7 @@ Makefile autotrace.pc autotrace.spec])
 echo "
 
 Configuration:
-	imagemagick output support:	$HAVE_MAGICK
+	imagemagick output support:	$magick_ok
 	libpng output support:		$HAVE_LIBPNG
 	swf output support by ming:	$HAVE_LIBSWF
 	pstoedit output support:	$pstoedit_ok
