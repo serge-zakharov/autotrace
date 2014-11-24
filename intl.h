@@ -7,7 +7,7 @@
 
 #ifdef ENABLE_NLS
 #include <libintl.h>
-#define _(String) dgettext(PACKAGE,String)
+#define _(String) dgettext(PACKAGE_NAME,String)
 #define N_(String) (String)
 #else /* NLS is disabled */
 #define _(String) (String)

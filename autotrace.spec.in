@@ -1,6 +1,6 @@
 Summary: Program for converting bitmaps to vector graphics
-Name: @PACKAGE@
-Version: @AUTOTRACE_VERSION@
+Name: @PACKAGE_NAME@
+Version: @PACKAGE_VERSION@
 Release: 1
 Url: http://autotrace.sourceforge.net
 Source: http://ftp1.sourceforge.net/autotrace/%{name}-%{version}.tar.gz

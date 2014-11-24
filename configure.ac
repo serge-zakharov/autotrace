@@ -2,22 +2,8 @@
 #
 # Author: Masatake YAMATO (yamato@redhat.com)
 #
-AC_INIT(fit.c)
-PACKAGE=autotrace
-#
-# version setting up for Automake 
-# 
-MAJOR_VERSION=0
-MINOR_VERSION=31
-MICRO_VERSION=1
-dnl VERSION is not acceptable; it conflicts 
-dnl with a variable defined in VC++.
-AUTOTRACE_VERSION=${MAJOR_VERSION}.${MINOR_VERSION}.${MICRO_VERSION}
-AM_INIT_AUTOMAKE($PACKAGE, $AUTOTRACE_VERSION, no-define)
-AC_DEFINE_UNQUOTED(PACKAGE, "$PACKAGE", [Package name])
-AC_SUBST(PACKAGE)
-AC_DEFINE_UNQUOTED(AUTOTRACE_VERSION,"$AUTOTRACE_VERSION", [Package version])
-AC_SUBST(AUTOTRACE_VERSION)
+AC_INIT([autotrace], [0.31.1], [], [], [http://autotrace.sourceforge.net])
+AM_INIT_AUTOMAKE(no-define)
 AC_CONFIG_MACRO_DIR([m4])
 
 #
@@ -26,34 +12,26 @@ AC_CONFIG_MACRO_DIR([m4])
 LT_CURRENT=3
 LT_REVISION=0
 LT_AGE=0
-dnl AC_SUBST(LT_RELEASE)
+
 AC_SUBST(LT_CURRENT)
 AC_SUBST(LT_REVISION)
 AC_SUBST(LT_AGE)
-dnl AC_SUBST(LT_CURRENT_MINUS_AGE)
+
 AC_PROG_CC
-AC_PROG_LIBTOOL
-
-AUTOTRACE_WEB=http://autotrace.sourceforge.net
-AC_DEFINE_UNQUOTED(AUTOTRACE_WEB, "$AUTOTRACE_WEB", [Project home page])
-
-AM_MAINTAINER_MODE
-
-AM_CONFIG_HEADER(config.h)
-
 AC_PROG_CPP
-dnl AC_PROG_RANLIB
-dnl AC_CANONICAL_HOST
-dnl AC_ARG_PROGRAM
-AM_SANITY_CHECK
+AC_PROG_LIBTOOL
 AC_PROG_INSTALL
+
 AC_CHECK_HEADERS(malloc.h)
 
-GETTEXT_PACKAGE=$PACKAGE
-AC_SUBST(GETTEXT_PACKAGE)
-AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE",[Translation domain used])
-ALL_LINGUAS="ja de"
-AM_GLIB_GNU_GETTEXT
+AM_SILENT_RULES([yes])
+AM_CONFIG_HEADER(config.h)
+AM_SANITY_CHECK
+
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION(0.18)
+
+PKG_PROG_PKG_CONFIG([0.20])
 
 dnl
 dnl ImageMagick
@@ -340,94 +318,11 @@ dnl
 dnl GLib2
 dnl
 
-dnl Copied from soidpodi's configure.in
-AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
-if test "x$PKG_CONFIG" = "xno"; then
-	AC_MSG_ERROR(You have to install pkg-config to compile autotrace.)
-fi
-GLIB2_CFLAGS=
-GLIB2_LIBS=
 PKG_CHECK_MODULES(GLIB2, glib-2.0 >= 2.0  gmodule-2.0 >= 2.0 gthread-2.0 >= 2.0 gobject-2.0 >= 2.0, 
 	          glib_ok=yes, glib_ok=no)
 if test "x${glib_ok}" != "xyes"; then
    AC_MSG_ERROR([cannot find glib-2.0])
-else
-   :
 fi
-AC_SUBST(GLIB2_CFLAGS)
-AC_SUBST(GLIB2_LIBS)
-
-dnl
-dnl Popt sanity check
-dnl
-dnl POPT_LIBS=
-dnl popt_ok=
-dnl AC_CHECK_HEADER(popt.h, popt_ok=yes, popt_ok=no)
-dnl if test "x$popt_ok" != "xyes"; then
-dnl    AC_MSG_WARN([cannot find popt.h])
-dnl fi
-
-dnl popt_ok=
-dnl AC_CHECK_LIB(popt, poptGetNextOpt, popt_ok=yes, popt_ok=no)
-dnl if test "x$popt_ok" != "xyes"; then
-dnl    AC_MSG_WARN([cannot find libpopt])
-dnl fi
-
-dnl popt_ok=
-dnl BEFORE_POPT_LIBS=${LIBS}
-dnl LIBS="${LIBS} -lpopt"
-dnl AC_MSG_CHECKING([for popt float support])
-dnl AC_TRY_RUN([#include <popt.h>
-dnl #ifndef POPT_TABLEEND
-dnl #define POPT_TABLEEND { NULL, '\0', 0, 0, 0, NULL, NULL }
-dnl #endif /* Not def: POPT_TABLEEND */
-dnl int
-dnl main(int argc, char ** argv)
-dnl {
-dnl   float value = 1.0;
-dnl   const int x_argc = 2;
-dnl   const char * x_argv [] = {"floattest", "--real=0.000"};
-dnl   struct poptOption popt_table [] = {
-dnl     { "real", 'r', POPT_ARG_FLOAT, &value, 0, "Test float value", "value"},
-dnl     POPT_TABLEEND
-dnl   };
-dnl   poptContext popt_ctx = poptGetContext("floattest", x_argc, x_argv, popt_table, 0);
-dnl   while (poptGetNextOpt(popt_ctx) != -1) ;
-dnl   poptFreeContext (popt_ctx);
-dnl   exit ((int)value);
-dnl }], popt_ok=yes, popt_ok=no)
-dnl LIBS=${BEFORE_POPT_LIBS}
-
-dnl if test "x$popt_ok" != "xyes"; then
-dnl       	AC_MSG_RESULT([no])
-dnl 	AC_MSG_WARN([popts' float arg support is broken.])
-dnl else
-dnl 	LIBS=${BEFORE_POPT_LIBS}
-dnl 	AC_MSG_RESULT([yes])
-dnl 	POPT_LIBS=-lpopt
-dnl fi
-dnl AC_SUBST(POPT_LIBS)
-
-dnl
-dnl Vender's cc(not gcc)
-dnl
-dnl if test "x$CC" = xcc ; then
-dnl   case host in
-dnl 	mips-sgi-irix*)
-dnl # Peter Cucka <pcucka at anim.dreamworks.com> wrote:
-dnl # > Should I use -Ofast instead of -O2?
-dnl # -Ofast selects optimizations that maximize speed, at the expense of
-dnl # size, compile time, and, in some cases, floating point accuracy.
-dnl # Compiled with -Ofast, AutoTrace runs about twice as fast as with -O2,
-dnl # or even -O3, on the two machines (admittedly not a very extensive
-dnl # sample) on which I've tested it.  I'd recommend using -Ofast, but
-dnl # it's not necessary.
-dnl            CFLAGS=-Ofast
-dnl            ;;
-dnl 	*)
-dnl	    ;;
-dnl  esac
-dnl fi
 
 AC_OUTPUT([
 po/Makefile.in 

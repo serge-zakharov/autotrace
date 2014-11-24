@@ -90,8 +90,8 @@ main (int argc, char * argv[])
 
 #ifdef ENABLE_NLS
   setlocale (LC_ALL, "");
-  bindtextdomain (PACKAGE, LOCALEDIR);
-  textdomain(PACKAGE);
+  bindtextdomain (PACKAGE_NAME, LOCALEDIR);
+  textdomain(PACKAGE_NAME);
 #endif /* Def: ENABLE_NLS */
 
   fitting_opts = at_fitting_opts_new ();

@@ -434,15 +434,15 @@ const char *
 at_version (gboolean long_format)
 {
   if (long_format)
-    return "AutoTrace version " AUTOTRACE_VERSION;
+    return "AutoTrace version " PACKAGE_VERSION;
   else
-    return AUTOTRACE_VERSION;
+    return PACKAGE_VERSION;
 }
 
 const char * 
 at_home_site (void)
 {
-  return AUTOTRACE_WEB;
+  return PACKAGE_URL;
 }
 
 void
@@ -453,7 +453,7 @@ autotrace_init (void)
     {
 #ifdef ENABLE_NLS
       setlocale (LC_ALL, "");
-      bindtextdomain (PACKAGE, LOCALEDIR);
+      bindtextdomain (PACKAGE_NAME, LOCALEDIR);
 #endif /* Def: ENABLE_NLS */
 
       /* Initialize subsystems */
