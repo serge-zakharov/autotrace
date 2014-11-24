@@ -14,7 +14,7 @@ EXTRA_DIST = \
   src/shape_cubic.c.diff \
   autotrace.dsp \
   autotrace.dsw	\
-  README.MINGi \
+  doc/README.MING \
   libming.dsw \
   libming.dsp \
   autotrace.sln \
@@ -23,7 +23,7 @@ EXTRA_DIST = \
   libming.vcproj \
   autotrace.pc.in \
   TODO \
-  HACKING \
+  doc/HACKING \
   doc/FAQ \
   $(NULL)
 
