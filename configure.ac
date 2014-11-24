@@ -37,9 +37,10 @@ dnl
 dnl ImageMagick
 dnl
 HAVE_MAGICK=no
-AC_ARG_WITH(magick, 
-[  --with-magick  compile with maigck(default)
-  --without-magick  compile without maigck],,with_magick=yes)
+AC_ARG_WITH(magick,
+	[AS_HELP_STRING([--with-magick=@<:@yes/no@:>@],
+			[link with magick library @<:@default=no@:>@])],,
+	[with_magick=no])
 
 magick_ok=no
 if test "x${with_magick}" = xyes; then
@@ -140,8 +141,9 @@ dnl pstoedit library
 dnl
 
 AC_ARG_WITH(pstoedit,
-[  --with-pstoedit link with pstoedit library(default)
-  --without-pstoedit link without pstoedit library],,with_pstoedit=yes)
+	[AS_HELP_STRING([--with-pstoedit=@<:@yes/no@:>@],
+			[link with pstoedit library @<:@default=no@:>@])],,
+	[with_pstoedit=no])
 
 pstoedit_ok=no
 if test "x${with_pstoedit}" = xyes; then
