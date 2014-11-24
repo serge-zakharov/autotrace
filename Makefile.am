@@ -134,8 +134,11 @@ autotrace_SOURCES=\
 		getopt1.c			\
 		strgicmp.h
 
-INCLUDES = $(MAGICK_CFLAGS) $(LIBPSTOEDIT_CFLAGS) $(GLIB2_CFLAGS) 
-AM_CPPFLAGS = -DLOCALEDIR=\""$(datadir)/locale"\" 
+AM_CPPFLAGS = 					\
+		$(MAGICK_CFLAGS)		\
+		$(LIBPSTOEDIT_CFLAGS)		\
+		$(GLIB2_CFLAGS)			\
+		-DLOCALEDIR=\""$(datadir)/locale"\"
 
 autotrace_LDADD =				\
 		libautotrace.la			\
