@@ -235,3 +235,5 @@ rpm: dist autotrace.spec
 	rpm -bb autotrace.spec
 
 # ACLOCAL_AMFLAGS = -I m4
+
+-include $(top_srcdir)/git.mk
