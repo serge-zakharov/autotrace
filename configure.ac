@@ -326,8 +326,7 @@ fi
 
 AC_OUTPUT([
 po/Makefile.in 
-Makefile autotrace-config autotrace.pc autotrace.spec], 
-[chmod a+x autotrace-config])
+Makefile autotrace.pc autotrace.spec])
 
 echo "
 

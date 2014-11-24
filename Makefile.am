@@ -12,11 +12,8 @@ EXTRA_DIST = \
   src/output-pstoedit.c \
   src/output-pstoedit.h \
   src/shape_cubic.c.diff \
-  autotrace-config.af \
-  autotrace-config.in \
   autotrace.dsp \
   autotrace.dsw	\
-  autotrace.m4 \
   README.MINGi \
   libming.dsw \
   libming.dsp \
@@ -216,18 +213,8 @@ autotrace_LDADD = \
   -lm \
   $(NULL)
 
-m4datadir = $(datadir)/aclocal
-m4data_DATA = autotrace.m4
-
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA= autotrace.pc
-
-bin_SCRIPTS=autotrace-config
-BUILT_SOURCES=autotrace-config
-autotrace-config: autotrace-config.in
-
-autotrace-config.in: autotrace-config.af
-	autofig $<
 
 dist-hook: autotrace.spec
 	cp autotrace.spec $(distdir)
