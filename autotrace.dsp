@@ -85,367 +85,367 @@ LINK32=link.exe
 # Name "autotrace - Win32 Debug"
 # Begin Source File
 
-SOURCE=.\atou.c
+SOURCE=.\src\atou.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\atou.h
+SOURCE=.\src\atou.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\autotrace.c
+SOURCE=.\src\autotrace.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\autotrace.h
+SOURCE=.\src\autotrace.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\bitmap.c
+SOURCE=.\src\bitmap.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\bitmap.h
+SOURCE=.\src\bitmap.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\cmdline.h
+SOURCE=.\src\cmdline.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\color.c
+SOURCE=.\src\color.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\color.h
+SOURCE=.\src\color.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\curve.c
+SOURCE=.\src\curve.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\curve.h
+SOURCE=.\src\curve.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\despeckle.c
+SOURCE=.\src\despeckle.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\despeckle.h
+SOURCE=.\src\despeckle.h
 # End Source File
 # Begin Source File
 
-SOURCE=".\epsilon-equal.c"
+SOURCE=".\src\epsilon-equal.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\epsilon-equal.h"
+SOURCE=".\src\epsilon-equal.h"
 # End Source File
 # Begin Source File
 
-SOURCE=.\exception.c
+SOURCE=.\src\exception.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\exception.h
+SOURCE=.\src\exception.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\filename.c
+SOURCE=.\src\filename.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\filename.h
+SOURCE=.\src\filename.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\fit.c
+SOURCE=.\src\fit.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\fit.h
+SOURCE=.\src\fit.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\getopt.c
+SOURCE=.\src\getopt.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\getopt.h
+SOURCE=.\src\getopt.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\getopt1.c
+SOURCE=.\src\getopt1.c
 # End Source File
 # Begin Source File
 
-SOURCE=".\image-header.h"
+SOURCE=".\src\image-header.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\image-proc.c"
+SOURCE=".\src\image-proc.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\image-proc.h"
+SOURCE=".\src\image-proc.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\input-bmp.c"
+SOURCE=".\src\input-bmp.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\input-bmp.h"
+SOURCE=".\src\input-bmp.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\input-magick.c"
+SOURCE=".\src\input-magick.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\input-magick.h"
+SOURCE=".\src\input-magick.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\input-png.c"
+SOURCE=".\src\input-png.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\input-png.h"
+SOURCE=".\src\input-png.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\input-pnm.c"
+SOURCE=".\src\input-pnm.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\input-pnm.h"
+SOURCE=".\src\input-pnm.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\input-tga.c"
+SOURCE=".\src\input-tga.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\input-tga.h"
+SOURCE=".\src\input-tga.h"
 # End Source File
 # Begin Source File
 
-SOURCE=.\input.c
+SOURCE=.\src\input.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\input.h
+SOURCE=.\src\input.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\logreport.c
+SOURCE=.\src\logreport.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\logreport.h
+SOURCE=.\src\logreport.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\main.c
+SOURCE=.\src\main.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\median.c
+SOURCE=.\src\median.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\message.h
+SOURCE=.\src\message.h
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-cgm.c"
+SOURCE=".\src\output-cgm.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-cgm.h"
+SOURCE=".\src\output-cgm.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-dr2d.c"
+SOURCE=".\src\output-dr2d.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-dr2d.h"
+SOURCE=".\src\output-dr2d.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-dxf.c"
+SOURCE=".\src\output-dxf.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-dxf.h"
+SOURCE=".\src\output-dxf.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-emf.c"
+SOURCE=".\src\output-emf.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-emf.h"
+SOURCE=".\src\output-emf.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-epd.c"
+SOURCE=".\src\output-epd.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-epd.h"
+SOURCE=".\src\output-epd.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-eps.c"
+SOURCE=".\src\output-eps.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-eps.h"
+SOURCE=".\src\output-eps.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-er.c"
+SOURCE=".\src\output-er.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-er.h"
+SOURCE=".\src\output-er.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-fig.c"
+SOURCE=".\src\output-fig.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-fig.h"
+SOURCE=".\src\output-fig.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-mif.c"
+SOURCE=".\src\output-mif.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-mif.h"
+SOURCE=".\src\output-mif.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-p2e.c"
+SOURCE=".\src\output-p2e.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-p2e.h"
+SOURCE=".\src\output-p2e.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-pdf.c"
+SOURCE=".\src\output-pdf.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-pdf.h"
+SOURCE=".\src\output-pdf.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-pstoedit.c"
+SOURCE=".\src\output-pstoedit.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-pstoedit.h"
+SOURCE=".\src\output-pstoedit.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-sk.c"
+SOURCE=".\src\output-sk.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-sk.h"
+SOURCE=".\src\output-sk.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-svg.c"
+SOURCE=".\src\output-svg.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-svg.h"
+SOURCE=".\src\output-svg.h"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-swf.c"
+SOURCE=".\src\output-swf.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\output-swf.h"
+SOURCE=".\src\output-swf.h"
 # End Source File
 # Begin Source File
 
-SOURCE=.\output.c
+SOURCE=.\src\output.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\output.h
+SOURCE=.\src\output.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\ptypes.h
+SOURCE=.\src\ptypes.h
 # End Source File
 # Begin Source File
 
-SOURCE=".\pxl-outline.c"
+SOURCE=".\src\pxl-outline.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\pxl-outline.h"
+SOURCE=".\src\pxl-outline.h"
 # End Source File
 # Begin Source File
 
-SOURCE=.\quantize.h
+SOURCE=.\src\quantize.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\spline.c
+SOURCE=.\src\spline.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\spline.h
+SOURCE=.\src\spline.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\strgicmp.c
+SOURCE=.\src\strgicmp.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\strgicmp.h
+SOURCE=.\src\strgicmp.h
 # End Source File
 # Begin Source File
 
-SOURCE=".\thin-image.c"
+SOURCE=".\src\thin-image.c"
 # End Source File
 # Begin Source File
 
-SOURCE=".\thin-image.h"
+SOURCE=".\src\thin-image.h"
 # End Source File
 # Begin Source File
 
-SOURCE=.\types.h
+SOURCE=.\src\types.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\vector.c
+SOURCE=.\src\vector.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\vector.h
+SOURCE=.\src\vector.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\xstd.c
+SOURCE=.\src\xstd.c
 # End Source File
 # Begin Source File
 
-SOURCE=.\xstd.h
+SOURCE=.\src\xstd.h
 # End Source File
 # End Target
 # End Project

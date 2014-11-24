@@ -3,19 +3,20 @@ SUBDIRS = po
 man_MANS = autotrace.1
 EXTRA_DIST = \
   $(man_MANS) \
-  output-swf.c \
-  output-swf.h \
-  input-magick.h \
-  input-magick.c \
-  input-png.c \
-  input-png.h \
-  output-pstoedit.c \
-  output-pstoedit.h \
+  src/output-swf.c \
+  src/output-swf.h \
+  src/input-magick.h \
+  src/input-magick.c \
+  src/input-png.c \
+  src/input-png.h \
+  src/output-pstoedit.c \
+  src/output-pstoedit.h \
+  src/shape_cubic.c.diff \
   autotrace-config.af \
   autotrace-config.in \
   autotrace.dsp \
   autotrace.dsw	\
-  autotrace.m4 shape_cubic.c.diff \
+  autotrace.m4 \
   README.MINGi \
   libming.dsw \
   libming.dsp \
@@ -38,8 +39,8 @@ bin_PROGRAMS = autotrace
 
 if HAVE_MAGICK
 input_magick_src = \
-  input-magick.h \
-  input-magick.c \
+  src/input-magick.h \
+  src/input-magick.c \
   $(NULL)
 else
 input_magick_src =
@@ -47,30 +48,30 @@ endif
 
 if HAVE_LIBPNG
 input_png_src = \
-  input-png.c \
-  input-png.h \
+  src/input-png.c \
+  src/input-png.h \
   $(NULL)
 else
 input_png_src =
 endif
 
 input_src = \
-  input-pnm.c \
-  input-pnm.h \
-  input-bmp.c \
-  input-bmp.h \
-  input-tga.c \
-  input-tga.h \
-  input-gf.c \
-  input-gf.h \
+  src/input-pnm.c \
+  src/input-pnm.h \
+  src/input-bmp.c \
+  src/input-bmp.h \
+  src/input-tga.c \
+  src/input-tga.h \
+  src/input-gf.c \
+  src/input-gf.h \
   $(input_png_src) \
   $(input_magick_src) \
   $(NULL)
 
 if HAVE_LIBSWF
 output_swf_src = \
-  output-swf.c \
-  output-swf.h \
+  src/output-swf.c \
+  src/output-swf.h \
   $(NULL)
 else
 output_swf_src =
@@ -78,47 +79,47 @@ endif
 
 if HAVE_LIBPSTOEDIT
 output_pstoedit_src = \
-  output-pstoedit.h \
-  output-pstoedit.c \
+  src/output-pstoedit.h \
+  src/output-pstoedit.c \
   $(NULL)
 else
 output_pstoedit_src =
 endif
 output_src = \
-  output-eps.c \
-  output-eps.h \
-  output-er.c \
-  output-er.h \
-  output-fig.c \
-  output-fig.h \
-  output-sk.c \
-  output-sk.h \
-  output-svg.c \
-  output-svg.h \
-  output-ugs.c \
-  output-ugs.h \
-  output-p2e.c \
-  output-p2e.h \
-  output-emf.c \
-  output-emf.h \
-  output-dxf.c \
-  output-dxf.h \
-  output-epd.c \
-  output-epd.h \
-  output-pdf.c \
-  output-pdf.h \
-  output-mif.c \
-  output-mif.h \
-  output-cgm.c \
-  output-cgm.h \
-  output-dr2d.c \
-  output-dr2d.h \
-  output-pov.c \
-  output-pov.h \
-  output-plt.c \
-  output-plt.h \
-  output-ild.c \
-  output-ild.h \
+  src/output-eps.c \
+  src/output-eps.h \
+  src/output-er.c \
+  src/output-er.h \
+  src/output-fig.c \
+  src/output-fig.h \
+  src/output-sk.c \
+  src/output-sk.h \
+  src/output-svg.c \
+  src/output-svg.h \
+  src/output-ugs.c \
+  src/output-ugs.h \
+  src/output-p2e.c \
+  src/output-p2e.h \
+  src/output-emf.c \
+  src/output-emf.h \
+  src/output-dxf.c \
+  src/output-dxf.h \
+  src/output-epd.c \
+  src/output-epd.h \
+  src/output-pdf.c \
+  src/output-pdf.h \
+  src/output-mif.c \
+  src/output-mif.h \
+  src/output-cgm.c \
+  src/output-cgm.h \
+  src/output-dr2d.c \
+  src/output-dr2d.h \
+  src/output-pov.c \
+  src/output-pov.h \
+  src/output-plt.c \
+  src/output-plt.h \
+  src/output-ild.c \
+  src/output-ild.h \
   $(output_swf_src) \
   $(output_pstoedit_src) \
   $(NULL)
@@ -126,50 +127,50 @@ output_src = \
 libautotrace_la_SOURCES = \
   $(input_src) \
   $(output_src) \
-  fit.c \
-  bitmap.c \
-  spline.c \
-  curve.c \
-  epsilon-equal.c \
-  vector.c \
-  color.c \
-  autotrace.c \
-  output.c \
-  input.c \
-  pxl-outline.c \
-  median.c \
-  thin-image.c \
-  logreport.c \
-  filename.c \
-  xstd.c \
-  epsilon-equal.h \
-  thin-image.h \
-  quantize.h \
-  image-header.h \
-  fit.h \
-  bitmap.h \
-  spline.h \
-  curve.h \
-  vector.h \
-  pxl-outline.h \
-  despeckle.c \
-  despeckle.h \
-  exception.c \
-  strgicmp.c \
-  image-proc.c \
-  image-proc.h \
-  module.c \
-  private.h \
-  intl.h \
+  src/fit.c \
+  src/bitmap.c \
+  src/spline.c \
+  src/curve.c \
+  src/epsilon-equal.c \
+  src/vector.c \
+  src/color.c \
+  src/autotrace.c \
+  src/output.c \
+  src/input.c \
+  src/pxl-outline.c \
+  src/median.c \
+  src/thin-image.c \
+  src/logreport.c \
+  src/filename.c \
+  src/xstd.c \
+  src/epsilon-equal.h \
+  src/thin-image.h \
+  src/quantize.h \
+  src/image-header.h \
+  src/fit.h \
+  src/bitmap.h \
+  src/spline.h \
+  src/curve.h \
+  src/vector.h \
+  src/pxl-outline.h \
+  src/despeckle.c \
+  src/despeckle.h \
+  src/exception.c \
+  src/strgicmp.c \
+  src/image-proc.c \
+  src/image-proc.h \
+  src/module.c \
+  src/private.h \
+  src/intl.h \
   $(NULL)
 
 autotraceinclude_HEADERS = \
-  types.h \
-  autotrace.h \
-  input.h \
-  output.h \
-  exception.h \
-  color.h \
+  src/types.h \
+  src/autotrace.h \
+  src/input.h \
+  src/output.h \
+  src/exception.h \
+  src/color.h \
   $(NULL)
 
 libautotrace_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
@@ -179,21 +180,21 @@ libautotrace_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
 # File not installed and not shared should be in
 # libautotrace_a_SOURCES.
 noinst_HEADERS = \
-  filename.h \
-  xstd.h \
-  logreport.h \
-  message.h \
+  src/filename.h \
+  src/xstd.h \
+  src/logreport.h \
+  src/message.h \
   $(NULL)
 
 autotrace_SOURCES = \
-  atou.c \
-  atou.h \
-  main.c \
-  cmdline.h \
-  getopt.c \
-  getopt.h \
-  getopt1.c \
-  strgicmp.h \
+  src/atou.c \
+  src/atou.h \
+  src/main.c \
+  src/cmdline.h \
+  src/getopt.c \
+  src/getopt.h \
+  src/getopt1.c \
+  src/strgicmp.h \
   $(NULL)
 
 AM_CPPFLAGS = \

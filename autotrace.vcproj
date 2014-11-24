@@ -126,277 +126,277 @@
 	</Configurations>
 	<Files>
 		<File
-			RelativePath=".\atou.c">
+			RelativePath=".\src\atou.c">
 		</File>
 		<File
-			RelativePath=".\atou.h">
+			RelativePath=".\src\atou.h">
 		</File>
 		<File
-			RelativePath=".\autotrace.c">
+			RelativePath=".\src\autotrace.c">
 		</File>
 		<File
-			RelativePath=".\autotrace.h">
+			RelativePath=".\src\autotrace.h">
 		</File>
 		<File
-			RelativePath=".\bitmap.c">
+			RelativePath=".\src\bitmap.c">
 		</File>
 		<File
-			RelativePath=".\bitmap.h">
+			RelativePath=".\src\bitmap.h">
 		</File>
 		<File
-			RelativePath=".\cmdline.h">
+			RelativePath=".\src\cmdline.h">
 		</File>
 		<File
-			RelativePath=".\color.c">
+			RelativePath=".\src\color.c">
 		</File>
 		<File
-			RelativePath=".\color.h">
+			RelativePath=".\src\color.h">
 		</File>
 		<File
-			RelativePath=".\curve.c">
+			RelativePath=".\src\curve.c">
 		</File>
 		<File
-			RelativePath=".\curve.h">
+			RelativePath=".\src\curve.h">
 		</File>
 		<File
-			RelativePath=".\despeckle.c">
+			RelativePath=".\src\despeckle.c">
 		</File>
 		<File
-			RelativePath=".\despeckle.h">
+			RelativePath=".\src\despeckle.h">
 		</File>
 		<File
-			RelativePath=".\epsilon-equal.c">
+			RelativePath=".\src\epsilon-equal.c">
 		</File>
 		<File
-			RelativePath=".\epsilon-equal.h">
+			RelativePath=".\src\epsilon-equal.h">
 		</File>
 		<File
-			RelativePath="exception.c">
+			RelativePath=".\src\exception.c">
 		</File>
 		<File
-			RelativePath="exception.h">
+			RelativePath=".\src\exception.h">
 		</File>
 		<File
-			RelativePath=".\filename.c">
+			RelativePath=".\src\filename.c">
 		</File>
 		<File
-			RelativePath=".\filename.h">
+			RelativePath=".\src\filename.h">
 		</File>
 		<File
-			RelativePath=".\fit.c">
+			RelativePath=".\src\fit.c">
 		</File>
 		<File
-			RelativePath=".\fit.h">
+			RelativePath=".\src\fit.h">
 		</File>
 		<File
-			RelativePath=".\getopt.c">
+			RelativePath=".\src\getopt.c">
 		</File>
 		<File
-			RelativePath=".\getopt.h">
+			RelativePath=".\src\getopt.h">
 		</File>
 		<File
-			RelativePath=".\getopt1.c">
+			RelativePath=".\src\getopt1.c">
 		</File>
 		<File
-			RelativePath=".\image-header.h">
+			RelativePath=".\src\image-header.h">
 		</File>
 		<File
-			RelativePath="image-proc.c">
+			RelativePath=".\src\image-proc.c">
 		</File>
 		<File
-			RelativePath="image-proc.h">
+			RelativePath=".\src\image-proc.h">
 		</File>
 		<File
-			RelativePath=".\input-bmp.c">
+			RelativePath=".\src\input-bmp.c">
 		</File>
 		<File
-			RelativePath=".\input-bmp.h">
+			RelativePath=".\src\input-bmp.h">
 		</File>
 		<File
-			RelativePath=".\input-magick.c">
+			RelativePath=".\src\input-magick.c">
 		</File>
 		<File
-			RelativePath=".\input-magick.h">
+			RelativePath=".\src\input-magick.h">
 		</File>
 		<File
-			RelativePath="input-png.c">
+			RelativePath=".\src\input-png.c">
 		</File>
 		<File
-			RelativePath="input-png.h">
+			RelativePath=".\src\input-png.h">
 		</File>
 		<File
-			RelativePath=".\input-pnm.c">
+			RelativePath=".\src\input-pnm.c">
 		</File>
 		<File
-			RelativePath=".\input-pnm.h">
+			RelativePath=".\src\input-pnm.h">
 		</File>
 		<File
-			RelativePath=".\input-tga.c">
+			RelativePath=".\src\input-tga.c">
 		</File>
 		<File
-			RelativePath=".\input-tga.h">
+			RelativePath=".\src\input-tga.h">
 		</File>
 		<File
-			RelativePath=".\input.c">
+			RelativePath=".\src\input.c">
 		</File>
 		<File
-			RelativePath=".\input.h">
+			RelativePath=".\src\input.h">
 		</File>
 		<File
-			RelativePath=".\logreport.c">
+			RelativePath=".\src\logreport.c">
 		</File>
 		<File
-			RelativePath=".\logreport.h">
+			RelativePath=".\src\logreport.h">
 		</File>
 		<File
-			RelativePath=".\main.c">
+			RelativePath=".\src\main.c">
 		</File>
 		<File
-			RelativePath=".\median.c">
+			RelativePath=".\src\median.c">
 		</File>
 		<File
-			RelativePath=".\message.h">
+			RelativePath=".\src\message.h">
 		</File>
 		<File
-			RelativePath="output-cgm.c">
+			RelativePath=".\src\output-cgm.c">
 		</File>
 		<File
-			RelativePath="output-cgm.h">
+			RelativePath=".\src\output-cgm.h">
 		</File>
 		<File
-			RelativePath="output-dr2d.c">
+			RelativePath=".\src\output-dr2d.c">
 		</File>
 		<File
-			RelativePath="output-dr2d.h">
+			RelativePath=".\src\output-dr2d.h">
 		</File>
 		<File
-			RelativePath=".\output-dxf.c">
+			RelativePath=".\src\output-dxf.c">
 		</File>
 		<File
-			RelativePath=".\output-dxf.h">
+			RelativePath=".\src\output-dxf.h">
 		</File>
 		<File
-			RelativePath=".\output-emf.c">
+			RelativePath=".\src\output-emf.c">
 		</File>
 		<File
-			RelativePath=".\output-emf.h">
+			RelativePath=".\src\output-emf.h">
 		</File>
 		<File
-			RelativePath=".\output-epd.c">
+			RelativePath=".\src\output-epd.c">
 		</File>
 		<File
-			RelativePath=".\output-epd.h">
+			RelativePath=".\src\output-epd.h">
 		</File>
 		<File
-			RelativePath=".\output-eps.c">
+			RelativePath=".\src\output-eps.c">
 		</File>
 		<File
-			RelativePath=".\output-eps.h">
+			RelativePath=".\src\output-eps.h">
 		</File>
 		<File
-			RelativePath=".\output-er.c">
+			RelativePath=".\src\output-er.c">
 		</File>
 		<File
-			RelativePath=".\output-er.h">
+			RelativePath=".\src\output-er.h">
 		</File>
 		<File
-			RelativePath=".\output-fig.c">
+			RelativePath=".\src\output-fig.c">
 		</File>
 		<File
-			RelativePath=".\output-fig.h">
+			RelativePath=".\src\output-fig.h">
 		</File>
 		<File
-			RelativePath=".\output-mif.c">
+			RelativePath=".\src\output-mif.c">
 		</File>
 		<File
-			RelativePath=".\output-mif.h">
+			RelativePath=".\src\output-mif.h">
 		</File>
 		<File
-			RelativePath=".\output-p2e.c">
+			RelativePath=".\src\output-p2e.c">
 		</File>
 		<File
-			RelativePath=".\output-p2e.h">
+			RelativePath=".\src\output-p2e.h">
 		</File>
 		<File
-			RelativePath=".\output-pdf.c">
+			RelativePath=".\src\output-pdf.c">
 		</File>
 		<File
-			RelativePath=".\output-pdf.h">
+			RelativePath=".\src\output-pdf.h">
 		</File>
 		<File
-			RelativePath="output-pstoedit.c">
+			RelativePath=".\src\output-pstoedit.c">
 		</File>
 		<File
-			RelativePath="output-pstoedit.h">
+			RelativePath=".\src\output-pstoedit.h">
 		</File>
 		<File
-			RelativePath=".\output-sk.c">
+			RelativePath=".\src\output-sk.c">
 		</File>
 		<File
-			RelativePath=".\output-sk.h">
+			RelativePath=".\src\output-sk.h">
 		</File>
 		<File
-			RelativePath=".\output-svg.c">
+			RelativePath=".\src\output-svg.c">
 		</File>
 		<File
-			RelativePath=".\output-svg.h">
+			RelativePath=".\src\output-svg.h">
 		</File>
 		<File
-			RelativePath=".\output-swf.c">
+			RelativePath=".\src\output-swf.c">
 		</File>
 		<File
-			RelativePath=".\output-swf.h">
+			RelativePath=".\src\output-swf.h">
 		</File>
 		<File
-			RelativePath=".\output.c">
+			RelativePath=".\src\output.c">
 		</File>
 		<File
-			RelativePath=".\output.h">
+			RelativePath=".\src\output.h">
 		</File>
 		<File
-			RelativePath=".\ptypes.h">
+			RelativePath=".\src\ptypes.h">
 		</File>
 		<File
-			RelativePath=".\pxl-outline.c">
+			RelativePath=".\src\pxl-outline.c">
 		</File>
 		<File
-			RelativePath=".\pxl-outline.h">
+			RelativePath=".\src\pxl-outline.h">
 		</File>
 		<File
-			RelativePath=".\quantize.h">
+			RelativePath=".\src\quantize.h">
 		</File>
 		<File
-			RelativePath=".\spline.c">
+			RelativePath=".\src\spline.c">
 		</File>
 		<File
-			RelativePath=".\spline.h">
+			RelativePath=".\src\spline.h">
 		</File>
 		<File
-			RelativePath=".\strgicmp.c">
+			RelativePath=".\src\strgicmp.c">
 		</File>
 		<File
-			RelativePath=".\strgicmp.h">
+			RelativePath=".\src\strgicmp.h">
 		</File>
 		<File
-			RelativePath=".\thin-image.c">
+			RelativePath=".\src\thin-image.c">
 		</File>
 		<File
-			RelativePath=".\thin-image.h">
+			RelativePath=".\src\thin-image.h">
 		</File>
 		<File
-			RelativePath=".\types.h">
+			RelativePath=".\src\types.h">
 		</File>
 		<File
-			RelativePath=".\vector.c">
+			RelativePath=".\src\vector.c">
 		</File>
 		<File
-			RelativePath=".\vector.h">
+			RelativePath=".\src\vector.h">
 		</File>
 		<File
-			RelativePath=".\xstd.c">
+			RelativePath=".\src\xstd.c">
 		</File>
 		<File
-			RelativePath=".\xstd.h">
+			RelativePath=".\src\xstd.h">
 		</File>
 	</Files>
 	<Globals>

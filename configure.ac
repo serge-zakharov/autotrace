@@ -3,7 +3,7 @@
 # Author: Masatake YAMATO (yamato@redhat.com)
 #
 AC_INIT([autotrace], [0.31.1], [], [], [http://autotrace.sourceforge.net])
-AM_INIT_AUTOMAKE(no-define)
+AM_INIT_AUTOMAKE(no-define subdir-objects)
 AC_CONFIG_MACRO_DIR([m4])
 
 #
