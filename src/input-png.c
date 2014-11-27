@@ -184,7 +184,18 @@ read_png(png_structp png_ptr, png_infop info_ptr, at_input_opts_type * opts)
 	png_set_interlace_handling(png_ptr);
 	png_read_update_info(png_ptr, info_ptr);
 
+#if 0
 	png_read_png(png_ptr, info_ptr, PNG_TRANSFORM_IDENTITY, NULL);
+#else
+	png_bytep* row_pointers = png_malloc(png_ptr, info_ptr->height * sizeof(png_bytep));
+	png_data_freer(png_ptr, info_ptr, PNG_DESTROY_WILL_FREE_DATA, PNG_FREE_ROWS);
+	for (row = 0; row < (int)info_ptr->height; row++)
+		row_pointers[row] = png_malloc(png_ptr, png_get_rowbytes(png_ptr, info_ptr));
+
+	png_read_image(png_ptr, row_pointers);
+	png_set_rows(png_ptr, info_ptr, row_pointers);
+	png_set_invalid(png_ptr, info_ptr, PNG_INFO_IDAT);
+#endif
 	png_read_end(png_ptr, info_ptr);
 	return png_get_rows(png_ptr, info_ptr);
 }
