@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7BFD24F5-1904-412F-9870-8813A795F1AE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>autotrace</RootNamespace>
+    <ProjectName>autotrace</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MinimalRebuild>false</MinimalRebuild>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>MSVCRT.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <IgnoreSpecificDefaultLibraries>MSVCRT.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\src\shape_cubic.c.diff" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\atou.h" />
+    <ClInclude Include="..\..\src\autotrace.h" />
+    <ClInclude Include="..\..\src\bitmap.h" />
+    <ClInclude Include="..\..\src\cmdline.h" />
+    <ClInclude Include="..\..\src\color.h" />
+    <ClInclude Include="..\..\src\curve.h" />
+    <ClInclude Include="..\..\src\despeckle.h" />
+    <ClInclude Include="..\..\src\epsilon-equal.h" />
+    <ClInclude Include="..\..\src\exception.h" />
+    <ClInclude Include="..\..\src\filename.h" />
+    <ClInclude Include="..\..\src\fit.h" />
+    <ClInclude Include="..\..\src\getopt.h" />
+    <ClInclude Include="..\..\src\image-header.h" />
+    <ClInclude Include="..\..\src\image-proc.h" />
+    <ClInclude Include="..\..\src\input-bmp.h" />
+    <ClInclude Include="..\..\src\input-gf.h" />
+    <ClInclude Include="..\..\src\input-magick.h" />
+    <ClInclude Include="..\..\src\input-png.h" />
+    <ClInclude Include="..\..\src\input-pnm.h" />
+    <ClInclude Include="..\..\src\input-tga.h" />
+    <ClInclude Include="..\..\src\input.h" />
+    <ClInclude Include="..\..\src\intl.h" />
+    <ClInclude Include="..\..\src\logreport.h" />
+    <ClInclude Include="..\..\src\message.h" />
+    <ClInclude Include="..\..\src\output-cgm.h" />
+    <ClInclude Include="..\..\src\output-dr2d.h" />
+    <ClInclude Include="..\..\src\output-dxf.h" />
+    <ClInclude Include="..\..\src\output-emf.h" />
+    <ClInclude Include="..\..\src\output-epd.h" />
+    <ClInclude Include="..\..\src\output-eps.h" />
+    <ClInclude Include="..\..\src\output-er.h" />
+    <ClInclude Include="..\..\src\output-fig.h" />
+    <ClInclude Include="..\..\src\output-ild.h" />
+    <ClInclude Include="..\..\src\output-mif.h" />
+    <ClInclude Include="..\..\src\output-p2e.h" />
+    <ClInclude Include="..\..\src\output-pdf.h" />
+    <ClInclude Include="..\..\src\output-plt.h" />
+    <ClInclude Include="..\..\src\output-pov.h" />
+    <ClInclude Include="..\..\src\output-pstoedit.h" />
+    <ClInclude Include="..\..\src\output-sk.h" />
+    <ClInclude Include="..\..\src\output-svg.h" />
+    <ClInclude Include="..\..\src\output-swf.h" />
+    <ClInclude Include="..\..\src\output-ugs.h" />
+    <ClInclude Include="..\..\src\output.h" />
+    <ClInclude Include="..\..\src\private.h" />
+    <ClInclude Include="..\..\src\pxl-outline.h" />
+    <ClInclude Include="..\..\src\quantize.h" />
+    <ClInclude Include="..\..\src\spline.h" />
+    <ClInclude Include="..\..\src\strgicmp.h" />
+    <ClInclude Include="..\..\src\thin-image.h" />
+    <ClInclude Include="..\..\src\types.h" />
+    <ClInclude Include="..\..\src\vector.h" />
+    <ClInclude Include="..\..\src\xstd.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\atou.cpp" />
+    <ClCompile Include="..\..\src\autotrace.cpp" />
+    <ClCompile Include="..\..\src\bitmap.cpp" />
+    <ClCompile Include="..\..\src\color.cpp" />
+    <ClCompile Include="..\..\src\curve.cpp" />
+    <ClCompile Include="..\..\src\despeckle.cpp" />
+    <ClCompile Include="..\..\src\epsilon-equal.cpp" />
+    <ClCompile Include="..\..\src\exception.cpp" />
+    <ClCompile Include="..\..\src\filename.cpp" />
+    <ClCompile Include="..\..\src\fit.cpp" />
+    <ClCompile Include="..\..\src\getopt.cpp" />
+    <ClCompile Include="..\..\src\getopt1.cpp" />
+    <ClCompile Include="..\..\src\image-proc.cpp" />
+    <ClCompile Include="..\..\src\input-bmp.cpp" />
+    <ClCompile Include="..\..\src\input-gf.cpp" />
+    <ClCompile Include="..\..\src\input-magick.cpp" />
+    <ClCompile Include="..\..\src\input-png.cpp" />
+    <ClCompile Include="..\..\src\input-pnm.cpp" />
+    <ClCompile Include="..\..\src\input-tga.cpp" />
+    <ClCompile Include="..\..\src\input.cpp" />
+    <ClCompile Include="..\..\src\logreport.cpp" />
+    <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\median.cpp" />
+    <ClCompile Include="..\..\src\module.cpp" />
+    <ClCompile Include="..\..\src\output-cgm.cpp" />
+    <ClCompile Include="..\..\src\output-dr2d.cpp" />
+    <ClCompile Include="..\..\src\output-dxf.cpp" />
+    <ClCompile Include="..\..\src\output-emf.cpp" />
+    <ClCompile Include="..\..\src\output-epd.cpp" />
+    <ClCompile Include="..\..\src\output-eps.cpp" />
+    <ClCompile Include="..\..\src\output-er.cpp" />
+    <ClCompile Include="..\..\src\output-fig.cpp" />
+    <ClCompile Include="..\..\src\output-ild.cpp" />
+    <ClCompile Include="..\..\src\output-mif.cpp" />
+    <ClCompile Include="..\..\src\output-p2e.cpp" />
+    <ClCompile Include="..\..\src\output-pdf.cpp" />
+    <ClCompile Include="..\..\src\output-plt.cpp" />
+    <ClCompile Include="..\..\src\output-pov.cpp" />
+    <ClCompile Include="..\..\src\output-pstoedit.cpp" />
+    <ClCompile Include="..\..\src\output-sk.cpp" />
+    <ClCompile Include="..\..\src\output-svg.cpp" />
+    <ClCompile Include="..\..\src\output-swf.cpp" />
+    <ClCompile Include="..\..\src\output-ugs.cpp" />
+    <ClCompile Include="..\..\src\output.cpp" />
+    <ClCompile Include="..\..\src\pxl-outline.cpp" />
+    <ClCompile Include="..\..\src\spline.cpp" />
+    <ClCompile Include="..\..\src\strgicmp.cpp" />
+    <ClCompile Include="..\..\src\thin-image.cpp" />
+    <ClCompile Include="..\..\src\vector.cpp" />
+    <ClCompile Include="..\..\src\xstd.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
