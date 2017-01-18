@@ -26,12 +26,12 @@
 
 #include "output.h"
 
-int output_pdf_writer (FILE* file, gchar* name,
+int output_pdf_writer (FILE* file, char* name,
 		       int llx, int lly, int urx, int ury, 
 		       at_output_opts_type * opts,
 		       spline_list_array_type shape,
 		       at_msg_func msg_func, 
-		       gpointer msg_data,
-		       gpointer user_data);
+		       void* msg_data,
+		       void* user_data);
 
 #endif /* not OUTPUT_PDF_H */

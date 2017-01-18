@@ -24,7 +24,7 @@
 
 #include "output.h"
 
-int output_swf_writer(FILE* file, at_string name,
+int output_swf_writer(FILE* file, const std::string& name,
 		      int llx, int lly, int urx, int ury, 
 		      at_output_opts_type * opts,
 		      at_spline_list_array_type shape,

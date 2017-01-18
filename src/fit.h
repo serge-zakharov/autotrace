@@ -19,8 +19,8 @@ extern spline_list_array_type fitted_splines (pixel_outline_list_type,
 					      at_distance_map *,
 					      unsigned short width, unsigned short height,
 					      at_exception_type * exception,
-					      at_progress_func, gpointer,
-					      at_testcancel_func, gpointer);
+					      at_progress_func, void*,
+					      at_testcancel_func, void*);
 
 /* Get a new set of fitting options */
 extern fitting_opts_type new_fitting_opts (void);

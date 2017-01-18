@@ -23,32 +23,32 @@
 #include "autotrace.h"
 #include "types.h"
 #include "exception.h"
-#include <glib.h>
+
 
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
 
 typedef 
-int (*at_output_func) (FILE*, gchar* name,
+int (*at_output_func) (FILE*, char* name,
 		       int llx, int lly, 
 		       int urx, int ury,
 		       at_output_opts_type * opts,
 		       at_splines_type shape,
 		       at_msg_func msg_func, 
-		       gpointer msg_data,
-		       gpointer user_data);
+		       void* msg_data,
+		       void* user_data);
 
-extern int at_output_add_handler (const gchar* suffix,
-				  const gchar* description,
+extern int at_output_add_handler (const char* suffix,
+				  const char* description,
 				  at_output_func writer);
 
-extern int at_output_add_handler_full (const gchar* suffix, 
-				       const gchar* description,
+extern int at_output_add_handler_full (const char* suffix, 
+				       const char* description,
 				       at_output_func writer,
-				       gboolean override,
-				       gpointer user_data,
-				       GDestroyNotify user_data_destroy_func);
+				       bool override,
+				       void* user_data,
+				       _at_destroy_notifier_callback user_data_destroy_func);
 
 /* Data struct hierarchy:
    spline_list_array (splines)
@@ -94,18 +94,18 @@ extern int at_output_add_handler_full (const gchar* suffix,
 typedef void (* AtSplineListForeachFunc) (at_spline_list_type * spline_list,
 					     at_spline_type * spline,
 					     int index,
-					     gpointer user_data);
+					     void* user_data);
 typedef void (* AtSplineListArrayForeachFunc) (at_spline_list_array_type * spline_list_array,
 						  at_spline_list_type * spline_list,
 						  int index,
-						  gpointer user_data);
+						  void* user_data);
 
 void at_spline_list_foreach (at_spline_list_type *,
 			     AtSplineListForeachFunc func,
-			     gpointer user_data);
+			     void* user_data);
 void at_spline_list_array_foreach (at_spline_list_array_type *,
 				   AtSplineListArrayForeachFunc func,
-				   gpointer user_data);
+				   void* user_data);
 
 #ifdef __cplusplus
 }

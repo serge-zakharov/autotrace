@@ -22,13 +22,13 @@
 
 #include "output.h"
 
-int output_pov_writer (FILE* file, gchar* name,
+int output_pov_writer (FILE* file, char* name,
 		       int llx, int lly, int urx, int ury, 
 		       at_output_opts_type * opts,
 		       at_spline_list_array_type shape,
 		       at_msg_func msg_func, 
-		       gpointer msg_data,
-		       gpointer uesr_data);
+		       void* msg_data,
+		       void* uesr_data);
 
 
 

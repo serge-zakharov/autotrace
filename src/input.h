@@ -23,7 +23,6 @@
 #include "autotrace.h"
 #include "exception.h"
 
-#include <glib.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,28 +32,28 @@ extern "C" {
    following functions and macros. */
 
 typedef 
-at_bitmap (*at_input_func)   (gchar* name,
+at_bitmap (*at_input_func)   (char* name,
 				   at_input_opts_type * opts,
 				   at_msg_func msg_func, 
-				   gpointer msg_data,
-				   gpointer user_data);
+				   void* msg_data,
+				   void* user_data);
 
 /* at_input_add_handler
    Register an input handler to autotrace. 
    If a handler for the suffix is already existed, do nothing. */
-extern int at_input_add_handler (const gchar* suffix, 
-				 const gchar* description,
+extern int at_input_add_handler (const char* suffix, 
+				 const char* description,
 				 at_input_func reader);
 /* at_input_add_handler_full
    If OVERRIDE is TRUE and if the old handler for suffix is existed,
    remove the old handler first then add new handler.  
    If OVERRIDE is false, do nothing. */
-extern int at_input_add_handler_full (const gchar* suffix, 
-				      const gchar* description,
+extern int at_input_add_handler_full (const char* suffix, 
+				      const char* description,
 				      at_input_func reader,
-				      gboolean override,
-				      gpointer user_data,
-				      GDestroyNotify user_data_destroy_func);
+				      bool override,
+				      void* user_data,
+				      _at_destroy_notifier_callback user_data_destroy_func);
 
 /* at_bitmap_init
    Return initialized at_bitmap value.
